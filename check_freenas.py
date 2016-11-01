@@ -100,7 +100,7 @@ class Startup(object):
         msg=''
         try:
             for alert in alerts:
-              if alert['dismissed'] == 'false':
+              if not alert['dismissed']:
                 if alert['level'] == 'CRIT':
                     crit = crit + 1
                     msg = msg + '- (C) ' + string.replace(alert['message'], '\n', '. ') + ' '
